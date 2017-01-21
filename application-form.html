@@ -1,35 +1,47 @@
 <!doctype html>
 <html>
 <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <title>Application Form</title>
-    <center>
-        <h1>Job Application Form</h1>
-        <h5>Please fill in your first name, last name, salary requirement number and select one of job title you want to apply for.</h5>
-    </center>
 </head>
 <body>
-    <center>
-    <form action="/application-success" method=["POST"]>
-        <label for="fname">First Name: </label>
-        <input id="fname" type="text" name=fname>
-        <br>
-        <br>
-        <label for="lname">Last Name: </label>
-        <input id="lname" type="text" name=lname>
-        <br>
-        <br>
-        <label for="salary">Salary Requirement: </label>
-        <input id="salary" type="number" name=salary>
-        <br>
-        <br>
-        <label for="jobtype">Job Applying: </label> 
-        <!-- form a list????? -->
-        <input id="jobtype" type="radio" name="jobtype" value="Software Engineer">Software Engineer
-        <input id="jobtype" type="radio" name="jobtype" value="QA Engineer">QA Engineer
-        <input id="jobtype" type="radio" name="jobtype" value="Product Manager">Product Manager <br>
-        <br>
-        <input type="submit">
-    </form>
-    </center>
+    <div class="uprow">
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4 text-center">
+        <h1>Apply Now!</h1>
+        <div id="instruction">
+            <h5>Please fill in your first name, last name, salary requirement(number only) and select one of job title you want to apply for.</h5>
+            <h5>We are excited that you are interested in us!</h5>
+        </div>
+        </div>
+    </div>
+    <div class="downrow">
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4 text-center">
+        <form action="/application-success" method=["POST"]>
+            <br>
+            <label for="fname">First Name: </label>
+            <input id="fname" type="text" name=fname required>
+            <br>
+            <br>
+            <label for="lname">Last Name: </label>
+            <input id="lname" type="text" name=lname required>
+            <br>
+            <br>
+            <label for="salary">Salary Requirement: </label>
+            <input id="salary" type="number" name=salary required>
+            <br>
+            <br>
+            <label for="jobtype">Job Applying: </label> 
+            <select>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="QA Engineer">QA Engineer</option>
+                <option value="Product Manager">Product Manager</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Submit Applicaiton">
+        </form>
+        </div>
+    </div>
 </body>
 </html>
